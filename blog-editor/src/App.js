@@ -1,24 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import PageHeader from './components/page-header/page-header';
+import ArticleSummaryListItem from './components/article-summary-list/article-summary-list-item/article-summary-list-item';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <PageHeader/>
+    <ArticleSummaryListItem title={"Title"} summary={"This is some text."} />
     </div>
   );
 }
