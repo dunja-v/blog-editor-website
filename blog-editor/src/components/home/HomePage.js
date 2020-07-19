@@ -1,25 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ArticleSummaryList from './article-summary-list/article-summary-list';
-
-const items = [
-    {
-      title: "Title 1",
-      summary: "This is my cool article."
-    }, 
-    {
-      title: "Title 2",
-      summary: "This is my cooler article."
-    },
-    {
-      title: "Title 3",
-      summary: "This is my not cool article."
-    }
-];
+import { getArticles } from '../../api/articleApi';
 
 export function HomePage() {
-    return (
-      <div>
-        <ArticleSummaryList items={items} />
-      </div>
-    );
-  }
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    getArticles().then((loadedArticles) => setArticles(loadedArticles));
+  }, []);
+
+  return (
+    <div>
+      <ArticleSummaryList items={articles} />
+    </div>
+  );
+}
