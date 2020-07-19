@@ -1,16 +1,20 @@
 import React from 'react';
-import {Route} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 import './App.css';
 import { HomePage } from './components/home/HomePage';
 import {ArticlePage} from './components/article/ArticlePage'
-import {PageHeader} from './components/page-header/page-header';
+import {PageHeader} from './components/common/page-header/page-header';
+import PageNotFound from './components/PageNotFound';
 
 function App() {
   return (
     <div>
       <PageHeader/>
-      <Route exact path="/" component={HomePage} />
-      <Route exact path="/article" component={ArticlePage} />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/article" component={ArticlePage} />
+        <Route component={PageNotFound}/>
+      </Switch>
     </div>
   );
 }
