@@ -1,0 +1,18 @@
+{
+    "articles": [
+        {
+            "id": 1,
+            "title": "React Hooks",
+            "author": "Jane Doe",
+            "summary": "Look at this article. Such fancy summary!",
+            "text": "This is the text of the article."
+        },
+        {
+            "id": 2,
+            "title": "React Components",
+            "author": "John Doe",
+            "summary": "This is THE summary!",
+            "text": "Such text. Such awesomness."
+        }
+    ]
+}
