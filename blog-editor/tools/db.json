@@ -13,6 +13,13 @@
             "author": "John Doe",
             "summary": "This is THE summary!",
             "text": "Such text. Such awesomness."
+        },
+        {
+            "id": 3,
+            "title": "Responsive Design",
+            "author": "Nemo Nihil",
+            "summary": "This might be a summary... Or it might not be a summary...",
+            "text": "Text? What text?"
         }
     ]
 }
