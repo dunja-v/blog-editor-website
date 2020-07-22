@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ArticleSummaryList from './article-summary-list/article-summary-list';
 import { getArticles } from '../../api/articleApi';
 import HightlightArticle from './highlight-article/highlight-article';
+import { Container, Row, Col } from 'react-bootstrap'
 
 export function HomePage() {
   const [articles, setArticles] = useState([]);
@@ -15,9 +16,15 @@ export function HomePage() {
   }, []);
 
   return (
-    <div>
-      <HightlightArticle article={hightlightArticle}/>
-      <ArticleSummaryList items={articles} />
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <HightlightArticle article={hightlightArticle}/>
+        </Col>
+        <Col>
+          <ArticleSummaryList items={articles} />
+        </Col>
+      </Row>
+    </Container>
   );
 }

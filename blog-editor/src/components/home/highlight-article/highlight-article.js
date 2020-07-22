@@ -1,4 +1,5 @@
 import React from 'react';
+import './highlight-article.css'
 
 export default function HighlightArticle(props) {
     const article = props.article;
