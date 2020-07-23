@@ -2,7 +2,7 @@
     "articles": [
         {
             "id": 1,
-            "title": "React Hooks",
+            "title": "Git commands for everyday use",
             "author": "Jane Doe",
             "date": "2020-06-17",
             "summary": "Look at this article. Such fancy summary!",
@@ -11,7 +11,7 @@
         },
         {
             "id": 2,
-            "title": "React Components",
+            "title": "When to use Azure Application Gateway",
             "author": "John Doe",
             "date": "2020-02-05",
             "summary": "This is THE summary!",
@@ -20,7 +20,7 @@
         },
         {
             "id": 3,
-            "title": "Responsive Design",
+            "title": "What is Responsive Design and how to achieve it",
             "author": "Nemo Nihil",
             "date": "2020-04-20",
             "summary": "This might be a summary... Or it might not be a summary...",

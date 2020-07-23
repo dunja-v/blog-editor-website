@@ -10,7 +10,7 @@ export default function HighlightArticle(props) {
         <Image src={article.image} fluid/>
         <h3 className="highlightArticleTitle">{article.title}</h3>        
         <div className="highlightArticleSummary">{article.summary}</div>
-        <div>Published on: {date.toLocaleDateString()}</div>
+        <div className="highlightArticleDate">Published on: {date.toLocaleDateString()}</div>
         <div className="highlightArticleAauthor">Written by: {article.author}</div>
     </div>
 }

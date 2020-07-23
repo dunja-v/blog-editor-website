@@ -1,5 +1,6 @@
 .articleSummaryListItem{
-    padding: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 .articleSummaryListItemTitle{
@@ -8,4 +9,5 @@
 
 .articleSummaryListItemBody{
     font-family: 'Lato', sans-serif;
+    font-size: small;
 }
