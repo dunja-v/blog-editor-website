@@ -5,17 +5,18 @@ import { HomePage } from './components/home/HomePage';
 import {ArticlePage} from './components/article/ArticlePage'
 import {PageHeader} from './components/common/page-header/page-header';
 import PageNotFound from './components/PageNotFound';
+import { Container } from 'react-bootstrap'
 
 function App() {
   return (
-    <div>
+    <Container>
       <PageHeader/>
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/article" component={ArticlePage} />
         <Route component={PageNotFound}/>
       </Switch>
-    </div>
+    </Container>
   );
 }
 

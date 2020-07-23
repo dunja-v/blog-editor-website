@@ -8,8 +8,7 @@ export default function ArticleSummaryList(props) {
     return <div className="articleSummaryList">
         {props.items.map((item, index) => <ArticleSummaryListItem
                     key={"panel-card" + index}
-                    title={item.title}
-                    summary={item.summary}/>)
+                    article={item} />)
         }
     </div>
 }

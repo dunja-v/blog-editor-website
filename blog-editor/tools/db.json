@@ -4,22 +4,28 @@
             "id": 1,
             "title": "React Hooks",
             "author": "Jane Doe",
+            "date": "2020-06-17",
             "summary": "Look at this article. Such fancy summary!",
-            "text": "This is the text of the article."
+            "text": "This is the text of the article.",
+            "image": "http://icm.hr/wordpress/wp-content/uploads/2020/01/photo5841704961002550160.jpg"
         },
         {
             "id": 2,
             "title": "React Components",
             "author": "John Doe",
+            "date": "2020-02-05",
             "summary": "This is THE summary!",
-            "text": "Such text. Such awesomness."
+            "text": "Such text. Such awesomness.",
+            "image": "http://icm.hr/wordpress/wp-content/uploads/2019/10/minecraft-2.jpg"
         },
         {
             "id": 3,
             "title": "Responsive Design",
             "author": "Nemo Nihil",
+            "date": "2020-04-20",
             "summary": "This might be a summary... Or it might not be a summary...",
-            "text": "Text? What text?"
+            "text": "Text? What text?",
+            "image": "http://icm.hr/wordpress/wp-content/uploads/2019/03/53296975_988753984662509_2299074669036175360_n.jpg"
         }
     ]
 }

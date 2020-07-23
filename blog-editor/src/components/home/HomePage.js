@@ -24,6 +24,9 @@ export function HomePage() {
         <Col>
           <ArticleSummaryList items={articles} />
         </Col>
+        <Col>
+          <HightlightArticle article={hightlightArticle}/>
+        </Col>
       </Row>
     </Container>
   );
