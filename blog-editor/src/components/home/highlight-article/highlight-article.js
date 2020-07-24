@@ -1,6 +1,7 @@
 import React from 'react';
 import './highlight-article.css'
 import { Image } from 'react-bootstrap'
+import { Link } from "react-router-dom";
 
 export default function HighlightArticle(props) {
     const article = props.article;
@@ -8,7 +9,9 @@ export default function HighlightArticle(props) {
 
     return <div className="highlightArticle">
         <Image src={article.image} fluid/>
-        <h3 className="highlightArticleTitle">{article.title}</h3>        
+        <h3 className="highlightArticleTitle">
+            <Link to={"/article/" + article.id}>{article.title}</Link>
+        </h3>        
         <div className="highlightArticleSummary">{article.summary}</div>
         <div className="highlightArticleDate">Published on: {date.toLocaleDateString()}</div>
         <div className="highlightArticleAauthor">Written by: {article.author}</div>

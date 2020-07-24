@@ -13,7 +13,7 @@ function App() {
       <PageHeader/>
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/article" component={ArticlePage} />
+        <Route exact path="/article/:articleId" children={<ArticlePage /> } />
         <Route component={PageNotFound}/>
       </Switch>
     </Container>

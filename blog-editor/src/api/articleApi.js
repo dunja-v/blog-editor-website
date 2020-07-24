@@ -6,3 +6,8 @@ export function getArticles(){
     return fetch(baseUrl)
         .then(handleResponse);
 }
+
+export function getArticle(articleId){
+    return fetch(baseUrl  + "/" + articleId)
+        .then(handleResponse);
+}

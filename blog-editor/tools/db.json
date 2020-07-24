@@ -26,6 +26,23 @@
             "summary": "This might be a summary... Or it might not be a summary...",
             "text": "Text? What text?",
             "image": "http://icm.hr/wordpress/wp-content/uploads/2019/03/53296975_988753984662509_2299074669036175360_n.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Best PowerPoint tips & tricks",
+            "author": "Nemo Nihil",
+            "date": "2020-04-20",
+            "summary": "This might be a summary... Or it might not be a summary...",
+            "text": "Text? What text?",
+            "image": "http://icm.hr/wordpress/wp-content/uploads/2019/03/53296975_988753984662509_2299074669036175360_n.jpg"
+        },{
+            "id": 5,
+            "title": "When StackOverflow is at loss for words",
+            "author": "Nemo Nihil",
+            "date": "2020-04-20",
+            "summary": "This might be a summary... Or it might not be a summary...",
+            "text": "Text? What text?",
+            "image": "http://icm.hr/wordpress/wp-content/uploads/2019/02/50898588_1846281072148024_1622655351851581440_n.jpg"
         }
     ]
 }

@@ -6,12 +6,14 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 export function HomePage() {
   const [articles, setArticles] = useState([]);
-  const [hightlightArticle, setHighlightArticle] = useState({});
+  const [rightHightlightArticle, setRightHighlightArticle] = useState({});
+  const [leftHightlightArticle, setLeftHighlightArticle] = useState({});
 
   useEffect(() => {
-    getArticles().then((loadedArticles) => {
-      setArticles(loadedArticles);
-      setHighlightArticle(loadedArticles[0]);
+    getArticles().then((loadedArticles) => {      
+      setRightHighlightArticle(loadedArticles[0]);
+      setLeftHighlightArticle(loadedArticles[1]);
+      setArticles(loadedArticles.slice(2,5));
     });
   }, []);
 
@@ -19,13 +21,13 @@ export function HomePage() {
     <Container>
       <Row>
         <Col>
-          <HightlightArticle article={hightlightArticle}/>
+          <HightlightArticle article={rightHightlightArticle}/>
         </Col>
         <Col>
           <ArticleSummaryList items={articles} />
         </Col>
         <Col>
-          <HightlightArticle article={hightlightArticle}/>
+          <HightlightArticle article={leftHightlightArticle}/>
         </Col>
       </Row>
     </Container>
