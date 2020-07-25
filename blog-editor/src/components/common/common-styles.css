@@ -1,0 +1,19 @@
+.textLink {
+    color: inherit;
+    text-decoration: none;
+}
+
+.textLink:hover{
+    color: inherit;
+    text-decoration: none;
+}
+
+.textLink:visited{
+    color: inherit;
+    text-decoration: none;
+}
+
+.textLink:active{
+    color: inherit;
+    text-decoration: none;
+}

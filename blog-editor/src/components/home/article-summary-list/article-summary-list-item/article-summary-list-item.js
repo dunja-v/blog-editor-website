@@ -1,6 +1,8 @@
 import React from 'react';
 import './article-summary-list-item.css';
-import { Image, Row, Col } from 'react-bootstrap'
+import '../../../common/common-styles.css';
+import { Image, Row, Col } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 export default function ArticleSummaryListItem(props) {
     const article = props.article;
@@ -12,7 +14,9 @@ export default function ArticleSummaryListItem(props) {
                 <Image src={article.image} fluid/>
             </Col>
             <Col>
-                <h5 className="articleSummaryListItemTitle">{article.title}</h5>
+                <h5 className="articleSummaryListItemTitle">
+                    <Link to={"/article/" + article.id} className="textLink">{article.title}</Link>
+                </h5>
                 <div className="articleSummaryListItemBody">{article.author}</div>
                 <div className="articleSummaryListItemBody">{date.toLocaleDateString()}</div>                
             </Col>

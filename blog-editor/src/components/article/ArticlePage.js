@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getArticle } from '../../api/articleApi';
 import { useParams } from "react-router-dom";
-import { Image } from 'react-bootstrap'
+import { Image, Row, Col } from 'react-bootstrap'
+import './article-page.css';
 
 export function ArticlePage() {
   const [article, setArticle] = useState({});
@@ -17,14 +18,20 @@ export function ArticlePage() {
   }, [articleId]);
 
     return (
-      <div>
-        <h2>{article.title}</h2>
-        <div>
-          <h5>{article.author}</h5>
-          <h5>{date.toLocaleDateString()}</h5>
-        </div>
-        <Image src={article.image} fluid/>
-        <div>{article.text}</div>
-      </div>
+      <Row>
+        <Col></Col>
+        <Col xs={10} sm={10} md={8} lg={8}>
+          <div>
+            <h2 className="articleTitle">{article.title}</h2>
+            <div className="articleMetadata">
+              <h5>{article.author}</h5>
+              <h5>{date.toLocaleDateString()}</h5>
+            </div>
+            <Image src={article.image} fluid/>
+            <div className="articleText">{article.text}</div>
+          </div>
+        </Col>
+        <Col></Col>
+      </Row>
     );
 }
