@@ -3,7 +3,7 @@
         {
             "id": 1,
             "title": "Git commands for everyday use",
-            "author": "Jane Doe",
+            "author": 1,
             "date": "2020-06-17",
             "summary": "Look at this article. Such fancy summary!",
             "text": "This is the text of the article.",
@@ -12,7 +12,7 @@
         {
             "id": 2,
             "title": "When to use Azure Application Gateway",
-            "author": "John Doe",
+            "author": 2,
             "date": "2020-02-05",
             "summary": "This is THE summary!",
             "text": "Such text. Such awesomness.",
@@ -21,7 +21,7 @@
         {
             "id": 3,
             "title": "What is Responsive Design and how to achieve it",
-            "author": "Nemo Nihil",
+            "author": 3,
             "date": "2020-04-20",
             "summary": "This might be a summary... Or it might not be a summary...",
             "text": "Text? What text?",
@@ -30,7 +30,7 @@
         {
             "id": 4,
             "title": "Best PowerPoint tips & tricks",
-            "author": "Nemo Nihil",
+            "author": 2,
             "date": "2020-04-20",
             "summary": "This might be a summary... Or it might not be a summary...",
             "text": "Text? What text?",
@@ -38,11 +38,26 @@
         },{
             "id": 5,
             "title": "When StackOverflow is at loss for words",
-            "author": "Nemo Nihil",
+            "author": 3,
             "date": "2020-04-20",
             "summary": "This might be a summary... Or it might not be a summary...",
             "text": "Text? What text?",
             "image": "http://icm.hr/wordpress/wp-content/uploads/2019/02/50898588_1846281072148024_1622655351851581440_n.jpg"
         }
-    ]
+    ],
+
+    "authors": [
+        {
+            "id": 1,
+            "name": "Jane Doe"
+        },
+        {
+            "id": 2,
+            "name": "John Dove"
+        },
+        {
+            "id": 3,
+            "name": "Kelly Smith"
+        }
+    ]    
 }
