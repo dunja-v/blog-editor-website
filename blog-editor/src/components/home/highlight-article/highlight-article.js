@@ -15,6 +15,6 @@ export default function HighlightArticle(props) {
         </h3>        
         <div className="highlightArticleSummary">{article.summary}</div>
         <div className="highlightArticleDate">Published on: {date.toLocaleDateString()}</div>
-        <div className="highlightArticleAauthor">Written by: {article.author}</div>
+        <div className="highlightArticleAauthor">Written by: {article.authorName}</div>
     </div>
 }

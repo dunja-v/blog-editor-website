@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ArticleSummaryList from './article-summary-list/article-summary-list';
-import { getArticles } from '../../api/articleApi';
+import { getArticles, getAuthors } from '../../api/articleApi';
 import HightlightArticle from './highlight-article/highlight-article';
 import { Container, Row, Col } from 'react-bootstrap'
 
@@ -10,7 +10,13 @@ export function HomePage() {
   const [leftHightlightArticle, setLeftHighlightArticle] = useState({});
 
   useEffect(() => {
-    getArticles().then((loadedArticles) => {      
+    let authors;
+    getAuthors().then((loadedAuthors) => authors = Object.assign({}, ...loadedAuthors.map((author) => ({[author.id]: author}))));
+
+    getArticles().then((loadedArticles) => {
+      // TODO what if there's no author
+      loadedArticles.map(article => article.authorName = authors[article.author].name);
+      
       setRightHighlightArticle(loadedArticles[0]);
       setLeftHighlightArticle(loadedArticles[1]);
       setArticles(loadedArticles.slice(2,5));

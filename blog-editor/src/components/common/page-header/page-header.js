@@ -14,7 +14,7 @@ export function PageHeader(props) {
             <Navbar >
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link><Link to="/" className="textLink">Home</Link></Nav.Link>
+                        <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="https://github.com/dunja-v/blog-editor-website">GitHub</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
