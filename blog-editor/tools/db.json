@@ -49,15 +49,18 @@
     "authors": [
         {
             "id": 1,
-            "name": "Jane Doe"
+            "name": "Jane Doe",
+            "summary": "Something about Jane."
         },
         {
             "id": 2,
-            "name": "John Dove"
+            "name": "John Dove",
+            "summary": "Learn more about John"
         },
         {
             "id": 3,
-            "name": "Kelly Smith"
+            "name": "Kelly Smith",
+            "summary": "This is Kelly."
         }
     ]    
 }
