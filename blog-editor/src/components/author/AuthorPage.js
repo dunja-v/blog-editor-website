@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { getAuthor, getArticlesByAuthor } from '../../api/articleApi';
 import { useParams } from "react-router-dom";
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Image } from 'react-bootstrap'
+import defaultUserImage from '../../images/user.png';
 import './author-page.css';
 
 export function AuthorPage() {
     const [author, setAuthor] = useState({});
     const [authoredArticles, setAuthoredArticles] = useState([]);
-
-
 
     let { authorId } = useParams();
     authorId = parseInt(authorId);
@@ -29,12 +28,25 @@ export function AuthorPage() {
     return (
         <Row>
         <Col></Col>
-        <Col xs={10} sm={10} md={8} lg={8}>
-            <Row><h2>{author.name}</h2></Row>
-            <Row>{author.summary}</Row>
-            <Row><h5>Articles</h5></Row>
+        <Col xs={10} sm={10} md={8} lg={8}>            
+            <Row>
+                <Col xs={10} sm={10} md={8} lg={8}>
+                    <div><h2>{author.name}</h2></div>
+                    <div>{author.summary}</div>
+                </Col>
+                <Col>
+                    <Image src={defaultUserImage} className="user-image" roundedCircle />
+                </Col>
+            </Row>
+            <Row className="articles">
+                <h5>Articles</h5>
+            </Row>
+
             {authoredArticles.map((article) => 
-                (<Row><h5>{article.title}</h5></Row>)
+                (<div className="article">
+                    <div><h5>{article.title}</h5></div>
+                    <div>{article.summary}</div>
+                </div>)
             )}
         </Col>
         <Col></Col>
