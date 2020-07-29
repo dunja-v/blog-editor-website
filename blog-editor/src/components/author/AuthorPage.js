@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { Row, Col, Image } from 'react-bootstrap'
 import defaultUserImage from '../../images/user.png';
 import './author-page.css';
+import { ArticleSummary } from './article-summary/article-summary';
 
 export function AuthorPage() {
     const [author, setAuthor] = useState({});
@@ -26,7 +27,7 @@ export function AuthorPage() {
     }, [authorId]);
   
     return (
-        <Row>
+        <Row className="authorContainer">
         <Col></Col>
         <Col xs={10} sm={10} md={8} lg={8}>            
             <Row>
@@ -43,10 +44,7 @@ export function AuthorPage() {
             </Row>
 
             {authoredArticles.map((article) => 
-                (<div className="article">
-                    <div><h5>{article.title}</h5></div>
-                    <div>{article.summary}</div>
-                </div>)
+                (<ArticleSummary article={article} />)
             )}
         </Col>
         <Col></Col>
