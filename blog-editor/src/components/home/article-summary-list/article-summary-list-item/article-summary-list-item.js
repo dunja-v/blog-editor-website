@@ -17,7 +17,9 @@ export default function ArticleSummaryListItem(props) {
                 <h5 className="articleSummaryListItemTitle">
                     <Link to={"/article/" + article.id} className="textLink">{article.title}</Link>
                 </h5>
-                <div className="articleSummaryListItemBody">{article.authorName}</div>
+                <div>
+                    <Link to={"/author/" + article.author} className="textLink">{article.authorName}</Link>
+                </div>
                 <div className="articleSummaryListItemBody">{date.toLocaleDateString()}</div>                
             </Col>
         </Row>

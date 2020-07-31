@@ -3,6 +3,7 @@ import { getArticle, getAuthor } from '../../api/articleApi';
 import { useParams } from "react-router-dom";
 import { Image, Row, Col } from 'react-bootstrap'
 import './article-page.css';
+import { Link } from "react-router-dom";
 
 export function ArticlePage() {
   const [article, setArticle] = useState({});
@@ -29,7 +30,9 @@ export function ArticlePage() {
           <div>
             <h2 className="articleTitle">{article.title}</h2>
             <div className="articleMetadata">
-              <h5>{article.authorName}</h5>
+              <h5>
+                <Link to={"/author/" + article.author} className="textLink">{article.authorName}</Link>
+              </h5>
               <h5>{date.toLocaleDateString()}</h5>
             </div>
             <Image src={article.image} fluid/>

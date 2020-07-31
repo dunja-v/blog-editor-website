@@ -5,6 +5,7 @@ import { Row, Col, Image } from 'react-bootstrap'
 import defaultUserImage from '../../images/user.png';
 import './author-page.css';
 import { ArticleSummary } from './article-summary/article-summary';
+import { Link } from "react-router-dom";
 
 export function AuthorPage() {
     const [author, setAuthor] = useState({});
@@ -44,7 +45,9 @@ export function AuthorPage() {
             </Row>
 
             {authoredArticles.map((article) => 
-                (<ArticleSummary article={article} />)
+                (<Link to={"/article/" + article.id} className="textLink">
+                    <ArticleSummary article={article} />
+                </Link>)
             )}
         </Col>
         <Col></Col>
