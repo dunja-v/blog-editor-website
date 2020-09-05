@@ -37,7 +37,7 @@ export function AuthorPage() {
                     <div>{author.summary}</div>
                 </Col>
                 <Col>
-                    <Image src={defaultUserImage} className="user-image" roundedCircle />
+                    <Image src={defaultUserImage} className="author-image" roundedCircle />
                 </Col>
             </Row>
             <Row className="articles">

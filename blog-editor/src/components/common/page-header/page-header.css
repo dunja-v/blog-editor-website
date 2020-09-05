@@ -1,4 +1,10 @@
 .pageHeader {
     padding-left: 1em;
+    padding-top: 1em;
     font-family: 'Abril Fatface', cursive;
+}
+
+.user-image {
+    max-width: 2em;
+    float: right;
 }
