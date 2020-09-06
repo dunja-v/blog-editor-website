@@ -6,18 +6,21 @@ import {ArticlePage} from './components/article/ArticlePage'
 import {AuthorPage} from './components/author/AuthorPage'
 import {PageHeader} from './components/common/page-header/page-header';
 import PageNotFound from './components/PageNotFound';
-import { Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap';
+import { UserContextProvider } from './data/context/user-context';
 
 function App() {
   return (
     <Container>
-      <PageHeader/>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/article/:articleId" children={<ArticlePage /> } />
-        <Route exact path="/author/:authorId" component={AuthorPage} />
-        <Route component={PageNotFound}/>
-      </Switch>
+      <UserContextProvider>
+        <PageHeader/>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/article/:articleId" children={<ArticlePage /> } />
+          <Route exact path="/author/:authorId" component={AuthorPage} />
+          <Route component={PageNotFound}/>
+        </Switch>
+      </UserContextProvider>
     </Container>
   );
 }

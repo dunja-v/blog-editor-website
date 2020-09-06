@@ -4,8 +4,11 @@ import '../common-styles.css';
 import { Link } from "react-router-dom";
 import { Row, Col, Navbar, Nav, Container, Image } from 'react-bootstrap'
 import defaultUserImage from '../../../images/user.png';
+import { useUserContext } from '../../../data/context/user-context';
 
 export function PageHeader(props) {
+    const user = useUserContext();
+
     return <Container>
         <Row className="pageHeader">
 
