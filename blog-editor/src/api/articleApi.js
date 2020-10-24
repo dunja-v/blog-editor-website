@@ -26,3 +26,8 @@ export function getArticlesByAuthor(authorId){
     return fetch(baseUrl + "/articles?author=" + authorId)
         .then(handleResponse);
 }
+
+export function getUser(){
+    return fetch(baseUrl + "/user")
+        .then(handleResponse);
+}

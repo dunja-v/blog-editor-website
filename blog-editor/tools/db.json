@@ -1,4 +1,9 @@
 {
+    "user": {
+        "id": 1,
+        "name": "Wade Watts"
+    },   
+    
     "articles": [
         {
             "id": 1,
