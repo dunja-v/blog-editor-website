@@ -22,7 +22,6 @@ export function ArticlePage() {
     });    
   }, [articleId]);
 
-  console.log(article);
     return (
       <Row>
         <Col></Col>

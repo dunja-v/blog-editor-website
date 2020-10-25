@@ -16,7 +16,7 @@ export function PageHeader(props) {
                     <h1><Link to="/" className="textLink">Blog Editor</Link></h1>
                 </Col>
                 <Col>
-                    <Image src={defaultUserImage} className="user-image" roundedCircle />   
+                    <Image src={user.image ? user.image : defaultUserImage} className="user-image" roundedCircle />   
                 </Col>
         
         </Row>
