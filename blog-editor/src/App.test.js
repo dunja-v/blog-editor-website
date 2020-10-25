@@ -6,8 +6,7 @@ import {AuthorPage} from './components/author/AuthorPage'
 import {PageHeader} from './components/common/page-header/page-header';
 import PageNotFound from './components/PageNotFound';
 import { render, screen } from '@testing-library/react';
-import { createMemoryHistory } from 'history';
-import { Router } from 'react-router-dom';
+import { MemoryRouter } from 'react-router';
 import '@testing-library/jest-dom/extend-expect';
 
 jest.mock('./components/home/HomePage');
@@ -19,15 +18,14 @@ jest.mock('./components/PageNotFound');
 describe("Tests for App Router", () => {
   test("Should render page header and HomePage on default route", () => {
     // Arrange
-    const history = createMemoryHistory();  
     PageHeader.mockImplementation(() => <div>PageHeaderMock</div>);
     HomePage.mockImplementation(() => <div>HomePageMock</div>);
 
     // Act
     render(
-      <Router history={history}>
-        <App />
-      </Router>
+      <MemoryRouter>
+        <App/>
+      </MemoryRouter>
     );
 
     // Assert
@@ -37,16 +35,14 @@ describe("Tests for App Router", () => {
 
   test("Should render page header and ArticlePage for article route", () => {
     // Arrange
-    const history = createMemoryHistory();
-    history.push('/article/1');
     PageHeader.mockImplementation(() => <div>PageHeaderMock</div>);
     ArticlePage.mockImplementation(() => <div>ArticlePageMock</div>);
 
     // Act
     render(
-      <Router history={history}>
-        <App />
-      </Router>
+      <MemoryRouter initialEntries={['/article/1']}>
+        <App/>
+      </MemoryRouter>
     );
 
     // Assert
@@ -56,16 +52,14 @@ describe("Tests for App Router", () => {
 
   test("Should render page header and AuthorPage for author route", () => {
     // Arrange
-    const history = createMemoryHistory();
-    history.push('/author/1');
     PageHeader.mockImplementation(() => <div>PageHeaderMock</div>);
     AuthorPage.mockImplementation(() => <div>AuthorPageMock</div>);
 
     // Act
     render(
-      <Router history={history}>
-        <App />
-      </Router>
+      <MemoryRouter initialEntries={['/author/1']}>
+        <App/>
+      </MemoryRouter>
     );
 
     // Assert
@@ -75,16 +69,14 @@ describe("Tests for App Router", () => {
 
   test("Should render page header and PageNotFound for invalid route", () => {
     // Arrange
-    const history = createMemoryHistory();
-    history.push('/invalid/route');
     PageHeader.mockImplementation(() => <div>PageHeaderMock</div>);
     PageNotFound.mockImplementation(() => <div>PageNotFoundMock</div>);
 
     // Act
     render(
-      <Router history={history}>
-        <App />
-      </Router>
+      <MemoryRouter initialEntries={['/invalid/route']}>
+        <App/>
+      </MemoryRouter>
     );
 
     // Assert
