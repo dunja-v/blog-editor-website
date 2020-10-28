@@ -6,5 +6,8 @@
 
 .user-image {
     max-width: 2em;
+}
+
+.user-dropdown {
     float: right;
 }

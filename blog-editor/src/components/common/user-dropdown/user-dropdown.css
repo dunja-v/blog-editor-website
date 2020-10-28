@@ -1,0 +1,8 @@
+.user-menu {
+    float: right;
+    cursor: pointer;
+}
+
+.user-menu-button:after {
+    display: none !important;
+}

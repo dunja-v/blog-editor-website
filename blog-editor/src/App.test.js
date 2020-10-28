@@ -84,5 +84,3 @@ describe("Tests for App Router", () => {
     expect(screen.getByText("PageNotFoundMock")).toBeInTheDocument();
   });
 });
-
-

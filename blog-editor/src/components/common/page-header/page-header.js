@@ -2,9 +2,9 @@ import React from 'react';
 import './page-header.css';
 import '../common-styles.css';
 import { Link } from "react-router-dom";
-import { Row, Col, Navbar, Nav, Container, Image } from 'react-bootstrap'
-import defaultUserImage from '../../../images/user.png';
+import { Row, Col, Navbar, Nav, Container, Image } from 'react-bootstrap';
 import { useUserContext } from '../../../data/context/user-context';
+import { UserDropdown } from '../user-dropdown/user-dropdown';
 
 export function PageHeader(props) {
     const user = useUserContext();
@@ -16,7 +16,7 @@ export function PageHeader(props) {
                     <h1><Link to="/" className="textLink">Blog Editor</Link></h1>
                 </Col>
                 <Col>
-                    <Image src={user.image ? user.image : defaultUserImage} className="user-image" roundedCircle />   
+                    <UserDropdown />  
                 </Col>
         
         </Row>
