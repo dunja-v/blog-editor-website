@@ -1,6 +1,6 @@
 import React from 'react';
 import './user-dropdown.css';
-import { Dropdown, Image, Container, Row, Col } from 'react-bootstrap'
+import { Dropdown, Image, Container, Row } from 'react-bootstrap'
 import { useUserContext } from '../../../data/context/user-context';
 import defaultUserImage from '../../../images/user.png';
 
@@ -11,15 +11,11 @@ export function UserDropdown(props) {
         <Dropdown.Toggle as={Container} className="user-menu-button">
             <Image src={user.image ? user.image : defaultUserImage} className="user-image" roundedCircle /> 
         </Dropdown.Toggle>
-        <Dropdown.Menu>
+        <Dropdown.Menu className="user-menu-dropdown">
             <Dropdown.Item href="#">
-                <Row>
-                    <Col>
+                <Row className="user-link-item" >
                         <Image src={defaultUserImage} className="user-image" roundedCircle />
-                    </Col>
-                    <Col>
-                        {user.name}
-                    </Col>
+                        <div>{user.name}</div>
                 </Row>
             </Dropdown.Item>
             <Dropdown.Divider/>
