@@ -10,7 +10,7 @@
     "@types/node": "^15.12.4",
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.8",
-    "bootstrap": "^4.6.0",
+    "bootstrap": "^5.0.1",
     "i18n": "^0.13.3",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
