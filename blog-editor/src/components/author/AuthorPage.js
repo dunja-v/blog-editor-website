@@ -4,8 +4,9 @@ import { useParams } from "react-router-dom";
 import { Row, Col, Image } from 'react-bootstrap'
 import defaultUserImage from '../../images/user.png';
 import './author-page.css';
-import { ArticleSummary } from './article-summary/article-summary';
 import { Link } from "react-router-dom";
+import { ArticleSummary } from './article-summary';
+
 
 export function AuthorPage() {
     const [author, setAuthor] = useState({});

@@ -1,7 +1,12 @@
 import React from 'react';
-import { Image, Container } from 'react-bootstrap'
+import { Image, Container } from 'react-bootstrap';
+import { ArticleModel } from '../../../data/context/models/AtricleModel';
 
-export function ArticleSummary(props) {
+type ArticleSummaryProps = {
+    article: ArticleModel,
+};
+
+export function ArticleSummary(props: ArticleSummaryProps) {
     const article = props.article;
 
     return (
@@ -11,4 +16,4 @@ export function ArticleSummary(props) {
             <div>{article.summary}</div>
         </Container>
     )    
-}
+};
