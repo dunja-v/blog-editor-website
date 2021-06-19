@@ -1,42 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import { getAuthor, getArticlesByAuthor } from '../../api/articleApi';
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Row, Col, Image } from 'react-bootstrap'
 import defaultUserImage from '../../images/user.png';
 import './author-page.css';
-import { Link } from "react-router-dom";
 import { ArticleSummary } from '../../components/article-summary';
+import { ArticleModel, AuthorModel } from '../../data/models';
 
 
 export function AuthorPage() {
-    const [author, setAuthor] = useState({});
-    const [authoredArticles, setAuthoredArticles] = useState([]);
+    const [author, setAuthor] = useState({} as AuthorModel);
+    const [authoredArticles, setAuthoredArticles] = useState([] as ArticleModel[]);
 
-    let { authorId } = useParams();
-    authorId = parseInt(authorId);
+    const { authorId } = useParams<{authorId: string}>();
+    const authorIdAsNumber = parseInt(authorId);
 
     useEffect(() => {
-        // TODO what if author doesn't exist
-        getAuthor(authorId).then((loadedAuthor) => {
+        getAuthor(authorIdAsNumber).then((loadedAuthor) => {
             setAuthor(loadedAuthor);
         });    
-    }, [authorId]);
+    }, [authorId, authorIdAsNumber]);
 
     useEffect(() => {
-        getArticlesByAuthor(authorId).then((loadedArticles) => {
+        getArticlesByAuthor(authorIdAsNumber).then((loadedArticles) => {
             setAuthoredArticles(loadedArticles);
         });    
-    }, [authorId]);
+    }, [authorId, authorIdAsNumber]);
   
     return (
         <Row className="authorContainer">
         <Col></Col>
         <Col xs={10} sm={10} md={8} lg={8}>            
             <Row>
-                <Col xs={10} sm={10} md={8} lg={8}>
-                    <div><h2>{author.name}</h2></div>
-                    <div>{author.summary}</div>
-                </Col>
+                {author && // TODO what if author doesn't exist
+                    <Col xs={10} sm={10} md={8} lg={8}>
+                        <div><h2>{author.name}</h2></div>
+                        <div>{author.summary}</div>
+                    </Col>
+                }
                 <Col>
                     <Image src={defaultUserImage} className="author-image" roundedCircle />
                 </Col>
