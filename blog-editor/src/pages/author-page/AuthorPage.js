@@ -5,7 +5,7 @@ import { Row, Col, Image } from 'react-bootstrap'
 import defaultUserImage from '../../images/user.png';
 import './author-page.css';
 import { Link } from "react-router-dom";
-import { ArticleSummary } from './article-summary';
+import { ArticleSummary } from '../../components/article-summary';
 
 
 export function AuthorPage() {

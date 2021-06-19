@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, Container } from 'react-bootstrap';
-import { ArticleModel } from '../../../data/context/models/AtricleModel';
+import { ArticleModel } from '../../data/models/AtricleModel';
 
 type ArticleSummaryProps = {
     article: ArticleModel,
