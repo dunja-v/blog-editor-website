@@ -1,6 +1,6 @@
 import React from 'react';
 import './highlight-article.css'
-import '../../common/common-styles.css';
+import '../../../common-styles.css';
 import { Image } from 'react-bootstrap'
 import { Link } from "react-router-dom";
 

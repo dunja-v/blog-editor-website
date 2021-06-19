@@ -1,6 +1,6 @@
 import React from 'react';
 import './article-summary-list-item.css';
-import '../../../common/common-styles.css';
+import '../../../../common-styles.css';
 import { Image, Row, Col } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 

@@ -3,7 +3,7 @@ import App from './App';
 import { HomePage } from './pages/home-page/HomePage';
 import {ArticlePage} from './pages/article-page/ArticlePage';
 import {AuthorPage} from './pages/author-page/AuthorPage';
-import {PageHeader} from './components/common/page-header/page-header';
+import {PageHeader} from './components/page-header/PageHeader';
 import PageNotFound from './components/PageNotFound';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';

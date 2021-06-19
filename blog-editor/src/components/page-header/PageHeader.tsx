@@ -1,18 +1,18 @@
 import React from 'react';
 import './page-header.css';
-import '../common-styles.css';
+import '../../common-styles.css';
 import { Link } from "react-router-dom";
 import { Row, Col, Navbar, Nav, Container } from 'react-bootstrap';
-import { UserDropdown } from '../user-dropdown/user-dropdown';
+import { UserDropdown } from '../user-dropdown/UserDropdown';
 
-export function PageHeader(props) {
+export function PageHeader() {
     return <Container>
         <Row className="pageHeader">
                 <Col>
                     <h1><Link to="/" className="textLink">Blog Editor</Link></h1>
                 </Col>
                 <Col>
-                    <UserDropdown className="user-dropdown"/>  
+                    <UserDropdown />  
                 </Col>        
         </Row>
         <Row>

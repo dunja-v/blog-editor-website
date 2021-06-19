@@ -1,11 +1,11 @@
 import React from 'react';
 import './user-dropdown.css';
-import { Dropdown, Image, Container, Row } from 'react-bootstrap'
-import { useUserContext } from '../../../data/context/user-context';
-import defaultUserImage from '../../../images/user.png';
+import { Dropdown, Image, Container, Row } from 'react-bootstrap';
+import { useUserContext } from '../../data/context/UserContext';
+import defaultUserImage from '../../images/user.png';
 import { Link } from "react-router-dom";
 
-export function UserDropdown(props) {
+export function UserDropdown() {
     const user = useUserContext();
 
     return <Dropdown className="user-menu">
