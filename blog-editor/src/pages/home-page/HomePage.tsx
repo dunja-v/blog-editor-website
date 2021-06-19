@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import ArticleSummaryList from './article-summary-list/article-summary-list';
+import ArticleSummaryList from '../../components/home/article-summary-list/article-summary-list';
 import { getArticles, getAuthors } from '../../api/articleApi';
-import HightlightArticle from './highlight-article/highlight-article';
+import HightlightArticle from '../../components/home/highlight-article/highlight-article';
 import { Container, Row, Col } from 'react-bootstrap'
+import { ArticleModel, AuthorModel } from '../../data/models';
 
 export function HomePage() {
-  const [articles, setArticles] = useState([]);
-  const [rightHightlightArticle, setRightHighlightArticle] = useState({});
-  const [leftHightlightArticle, setLeftHighlightArticle] = useState({});
+  const [articles, setArticles] = useState([] as ArticleModel[]);
+  const [rightHightlightArticle, setRightHighlightArticle] = useState({} as ArticleModel);
+  const [leftHightlightArticle, setLeftHighlightArticle] = useState({} as ArticleModel);
 
   useEffect(() => {
-    let authors;
-    getAuthors().then((loadedAuthors) => authors = Object.assign({}, ...loadedAuthors.map((author) => ({[author.id]: author}))));
+    let authors: AuthorModel[];
+    getAuthors().then((loadedAuthors) => authors = Object.assign({}, ...loadedAuthors.map((author: any) => ({[author.id]: author}))));
 
     getArticles().then((loadedArticles) => {
       // TODO what if there's no author
-      loadedArticles.map(article => article.authorName = authors[article.author].name);
+      loadedArticles.map((article: any) => article.authorName = authors[article.author].name);
       
       setRightHighlightArticle(loadedArticles[0]);
       setLeftHighlightArticle(loadedArticles[1]);

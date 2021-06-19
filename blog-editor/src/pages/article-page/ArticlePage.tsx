@@ -4,23 +4,24 @@ import { useParams } from "react-router-dom";
 import { Image, Row, Col } from 'react-bootstrap'
 import './article-page.css';
 import { Link } from "react-router-dom";
+import { ArticleModel } from '../../data/models';
 
 export function ArticlePage() {
-  const [article, setArticle] = useState({});
+  const [article, setArticle] = useState({} as ArticleModel);
   const date = new Date(article.date);
 
-  let { articleId } = useParams();
-  articleId = parseInt(articleId);
+  const { articleId } = useParams<{articleId: string}>();
+  const articleIdAsNumber = parseInt(articleId);
 
   useEffect(() => {
     // TODO what if article doesn't exist
-    getArticle(articleId).then((loadedArticle) => {
+    getArticle(articleIdAsNumber).then((loadedArticle) => {
       getAuthor(loadedArticle.author).then((author) => {
         loadedArticle.authorName = author.name
         setArticle(loadedArticle);
       });
     });    
-  }, [articleId]);
+  }, [articleId, articleIdAsNumber]);
 
     return (
       <Row>

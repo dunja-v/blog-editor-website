@@ -1,18 +1,18 @@
 import React from 'react';
 import App from './App';
-import { HomePage } from './components/home/HomePage';
-import {ArticlePage} from './components/article/ArticlePage'
-import {AuthorPage} from './components/author/AuthorPage'
+import { HomePage } from './pages/home-page/HomePage';
+import {ArticlePage} from './pages/article-page/ArticlePage';
+import {AuthorPage} from './pages/author-page/AuthorPage';
 import {PageHeader} from './components/common/page-header/page-header';
 import PageNotFound from './components/PageNotFound';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import '@testing-library/jest-dom/extend-expect';
 
-jest.mock('./components/home/HomePage');
+jest.mock('./pages/home-page/HomePage');
 jest.mock('./components/common/page-header/page-header');
-jest.mock('./components/article/ArticlePage');
-jest.mock('./components/author/AuthorPage');
+jest.mock('./pages/article-page/ArticlePage');
+jest.mock('./pages/author-page/AuthorPage');
 jest.mock('./components/PageNotFound');
 
 describe("Tests for App Router", () => {
