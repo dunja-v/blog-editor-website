@@ -4,7 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import { Row, Col, Image } from 'react-bootstrap'
 import defaultUserImage from '../../images/user.png';
 import './author-page.css';
-import { ArticleSummary } from '../../components/article-summary';
+import { ArticleSummary } from '../../components';
 import { ArticleModel, AuthorModel } from '../../data/models';
 
 

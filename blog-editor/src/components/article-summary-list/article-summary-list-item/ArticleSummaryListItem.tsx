@@ -1,10 +1,15 @@
 import React from 'react';
 import './article-summary-list-item.css';
-import '../../../../common-styles.css';
+import '../../../common-styles.css';
 import { Image, Row, Col } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import { ArticleModel } from '../../../data/models';
 
-export default function ArticleSummaryListItem(props) {
+type ArticleSummaryListItemProps = {
+    article: ArticleModel;
+}
+
+export function ArticleSummaryListItem(props: ArticleSummaryListItemProps) {
     const article = props.article;
     const date = new Date(article.date);
 

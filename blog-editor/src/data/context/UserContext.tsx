@@ -6,7 +6,7 @@ export const UserContext = React.createContext({} as UserModel);
 
 type UserContextProviderProps = {
     children: React.ReactNode;
-    value: UserModel;
+    value?: UserModel;
 }
 
 export function UserContextProvider(props: UserContextProviderProps) {

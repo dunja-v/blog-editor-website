@@ -1,10 +1,15 @@
 import React from 'react';
 import './highlight-article.css'
-import '../../../common-styles.css';
+import '../../common-styles.css';
 import { Image } from 'react-bootstrap'
 import { Link } from "react-router-dom";
+import { ArticleModel } from '../../data/models';
 
-export default function HighlightArticle(props) {
+type HighlightArticleProps = {
+    article: ArticleModel,
+}
+
+export function HighlightArticle(props: HighlightArticleProps) {
     const article = props.article;
     const date = new Date(article.date);
 

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import ArticleSummaryList from '../../components/home/article-summary-list/article-summary-list';
-import { getArticles, getAuthors } from '../../api/articleApi';
-import HightlightArticle from '../../components/home/highlight-article/highlight-article';
+import { ArticleSummaryList, HighlightArticle } from '../../components';
+import { getArticles, getAuthors } from '../../api';
 import { Container, Row, Col } from 'react-bootstrap'
 import { ArticleModel, AuthorModel } from '../../data/models';
 
@@ -28,13 +27,13 @@ export function HomePage() {
     <Container>
       <Row>
         <Col>
-          <HightlightArticle article={rightHightlightArticle}/>
+          <HighlightArticle article={rightHightlightArticle}/>
         </Col>
         <Col>
           <ArticleSummaryList items={articles} />
         </Col>
         <Col>
-          <HightlightArticle article={leftHightlightArticle}/>
+          <HighlightArticle article={leftHightlightArticle}/>
         </Col>
       </Row>
     </Container>

@@ -1,25 +1,22 @@
 import React from 'react';
 import App from './App';
-import { HomePage } from './pages/home-page/HomePage';
-import {ArticlePage} from './pages/article-page/ArticlePage';
-import {AuthorPage} from './pages/author-page/AuthorPage';
-import {PageHeader} from './components/page-header/PageHeader';
-import PageNotFound from './components/PageNotFound';
+import {PageHeader} from './components';
+import { PageNotFound, HomePage, ArticlePage, AuthorPage } from './pages';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import '@testing-library/jest-dom/extend-expect';
 
 jest.mock('./pages/home-page/HomePage');
-jest.mock('./components/common/page-header/page-header');
+jest.mock('./components/page-header');
 jest.mock('./pages/article-page/ArticlePage');
 jest.mock('./pages/author-page/AuthorPage');
-jest.mock('./components/PageNotFound');
+jest.mock('./pages/PageNotFound');
 
 describe("Tests for App Router", () => {
   test("Should render page header and HomePage on default route", () => {
     // Arrange
-    PageHeader.mockImplementation(() => <div>PageHeaderMock</div>);
-    HomePage.mockImplementation(() => <div>HomePageMock</div>);
+    (PageHeader as jest.Mock).mockImplementation(() => <div>PageHeaderMock</div>);
+    (HomePage as jest.Mock).mockImplementation(() => <div>HomePageMock</div>);
 
     // Act
     render(
@@ -35,8 +32,8 @@ describe("Tests for App Router", () => {
 
   test("Should render page header and ArticlePage for article route", () => {
     // Arrange
-    PageHeader.mockImplementation(() => <div>PageHeaderMock</div>);
-    ArticlePage.mockImplementation(() => <div>ArticlePageMock</div>);
+    (PageHeader as jest.Mock).mockImplementation(() => <div>PageHeaderMock</div>);
+    (ArticlePage as jest.Mock).mockImplementation(() => <div>ArticlePageMock</div>);
 
     // Act
     render(
@@ -52,8 +49,8 @@ describe("Tests for App Router", () => {
 
   test("Should render page header and AuthorPage for author route", () => {
     // Arrange
-    PageHeader.mockImplementation(() => <div>PageHeaderMock</div>);
-    AuthorPage.mockImplementation(() => <div>AuthorPageMock</div>);
+    (PageHeader as jest.Mock).mockImplementation(() => <div>PageHeaderMock</div>);
+    (AuthorPage as jest.Mock).mockImplementation(() => <div>AuthorPageMock</div>);
 
     // Act
     render(
@@ -69,8 +66,8 @@ describe("Tests for App Router", () => {
 
   test("Should render page header and PageNotFound for invalid route", () => {
     // Arrange
-    PageHeader.mockImplementation(() => <div>PageHeaderMock</div>);
-    PageNotFound.mockImplementation(() => <div>PageNotFoundMock</div>);
+    (PageHeader as jest.Mock).mockImplementation(() => <div>PageHeaderMock</div>);
+    (PageNotFound as jest.Mock).mockImplementation(() => <div>PageNotFoundMock</div>);
 
     // Act
     render(

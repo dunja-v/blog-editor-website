@@ -1,13 +1,10 @@
 import React from 'react';
 import {Route, Switch} from "react-router-dom";
 import './App.css';
-import { HomePage } from './pages/home-page/HomePage';
-import {ArticlePage} from './pages/article-page/ArticlePage';
-import {AuthorPage} from './pages/author-page/AuthorPage';
-import {PageHeader} from './components/page-header/PageHeader';
-import PageNotFound from './pages/PageNotFound';
 import { Container } from 'react-bootstrap';
 import { UserContextProvider } from './data/context/UserContext';
+import { PageHeader } from './components';
+import { ArticlePage, AuthorPage, HomePage, PageNotFound } from './pages';
 
 function App() {
   return (
