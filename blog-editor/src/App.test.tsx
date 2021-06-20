@@ -1,4 +1,3 @@
-import React from 'react';
 import App from './App';
 import {PageHeader} from './components';
 import { PageNotFound, HomePage, ArticlePage, AuthorPage } from './pages';

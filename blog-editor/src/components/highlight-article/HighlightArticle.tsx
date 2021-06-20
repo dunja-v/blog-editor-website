@@ -1,4 +1,3 @@
-import React from 'react';
 import './highlight-article.css'
 import '../../common-styles.css';
 import { Image } from 'react-bootstrap'

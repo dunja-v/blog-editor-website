@@ -1,4 +1,3 @@
-import React from 'react';
 import './user-dropdown.css';
 import { Dropdown, Image, Container, Row } from 'react-bootstrap';
 import { useUserContext } from '../../data/context/UserContext';

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { getArticle, getAuthor } from '../../api';
 import { useParams } from "react-router-dom";
 import { Image, Row, Col } from 'react-bootstrap'

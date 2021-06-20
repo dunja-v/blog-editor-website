@@ -1,4 +1,3 @@
-import React from 'react';
 import './article-summary-list.css';
 import { ArticleSummaryListItem } from './article-summary-list-item';
 import { ArticleModel } from '../../data/models';

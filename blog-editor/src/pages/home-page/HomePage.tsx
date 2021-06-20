@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ArticleSummaryList, HighlightArticle } from '../../components';
 import { getArticles, getAuthors } from '../../api';
 import { Container, Row, Col } from 'react-bootstrap'
