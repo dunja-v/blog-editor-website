@@ -4,9 +4,11 @@ import { Dropdown, Image, Container, Row } from 'react-bootstrap';
 import { useUserContext } from '../../data/context/UserContext';
 import defaultUserImage from '../../images/user.png';
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 export function UserDropdown() {
     const user = useUserContext();
+    const {t} = useTranslation();
 
     return <Dropdown className="user-menu">
         <Dropdown.Toggle as={Container} className="user-menu-button">
@@ -20,9 +22,9 @@ export function UserDropdown() {
                 </Row>
             </Dropdown.Item>
             <Dropdown.Divider/>
-            <Dropdown.Item href="#">New Story</Dropdown.Item>
-            <Dropdown.Item href="#">Stories</Dropdown.Item>
-            <Dropdown.Item href="#">Stats</Dropdown.Item>        
+            <Dropdown.Item href="#">{t('user.dropdown.create')}</Dropdown.Item>
+            <Dropdown.Item href="#">{t('user.dropdown.list')}</Dropdown.Item>
+            <Dropdown.Item href="#">{t('user.dropdown.stats')}</Dropdown.Item>        
         </Dropdown.Menu>
     </Dropdown>
 }

@@ -1,6 +1,10 @@
 .pageHeader {
     padding-left: 1em;
     padding-top: 1em;
+    
+}
+
+.pageTitle {
     font-family: 'Abril Fatface', cursive;
 }
 

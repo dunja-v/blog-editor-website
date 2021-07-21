@@ -1,0 +1,13 @@
+{
+    "header": {
+        "title": "Početna"
+    },
+    "user.dropdown": {
+        "create": "Nova priča",
+        "list": "Priče",
+        "stats": "Statistika"
+    },
+    "highlight.article": {
+        "published": "Objavljeno: "
+    }
+}

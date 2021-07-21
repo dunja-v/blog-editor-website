@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Row, Col, Navbar, Nav, Container } from 'react-bootstrap';
 import { UserDropdown } from '../user-dropdown/UserDropdown';
 import { useTranslation } from "react-i18next";
+import { LanguageSelection } from '../language-selection/LanguageSelection';
 
 export function PageHeader() {
     const {t} = useTranslation();
@@ -12,7 +13,10 @@ export function PageHeader() {
     return <Container>
         <Row className="pageHeader">
                 <Col>
-                    <h1><Link to="/" className="textLink">Blog Editor</Link></h1>
+                    <h1 className="pageTitle"><Link to="/" className="textLink">Blog Editor</Link></h1>
+                </Col>
+                <Col>
+                    <LanguageSelection />   
                 </Col>
                 <Col>
                     <UserDropdown />  
