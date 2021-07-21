@@ -16,17 +16,10 @@ i18n
     },
     resources: {
         en: {
-<<<<<<< HEAD
             common: en
         },
         hr: {
             common: hr
-=======
-            common: en_us
-        },
-        hr: {
-            common: hr_hr
->>>>>>> main
         },
     },
   });
