@@ -1,0 +1,13 @@
+{
+    "header": {
+        "title": "Home"
+    },
+    "user.dropdown": {
+        "create": "New story",
+        "list": "Stories",
+        "stats": "Stats"
+    },
+    "highlight.article": {
+        "published": "Published on: "
+    }
+}
