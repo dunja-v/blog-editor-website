@@ -1,12 +1,25 @@
-.authorContainer {
+.authorPage-container {
+    display: grid;
+    grid-template-columns: 1fr minmax(250px, 80%) 1fr;
     padding-bottom: 3em;
 }
 
-.author-image {
-    max-width: 8em;
+.authorPage-autorInfo-container {
+    display: grid;
+    grid-template-columns: 80% 20%;
 }
 
-.articles {
+.authorPage-autorInfo-imageContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.authorPage-autorInfo-image {
+    height: 7em;
+    border-radius: 50%;
+}
+
+.authorPage-articles-title {
     padding-top: 2em;
-    padding-bottom: 2em;
+    padding-bottom: 1em;
 }
