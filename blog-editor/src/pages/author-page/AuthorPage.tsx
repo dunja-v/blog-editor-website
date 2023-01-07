@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getAuthor, getArticlesByAuthor } from '../../api/articleApi';
 import { useParams, Link } from "react-router-dom";
-import { Row, Col, Image } from 'react-bootstrap'
 import defaultUserImage from '../../images/user.png';
 import './author-page.css';
 import { ArticleSummary } from '../../components';
@@ -36,31 +35,31 @@ export function AuthorPage() {
     }, [authorIdAsNumber]);
   
     return (
-        <Row className="authorContainer">
-        <Col></Col>
-        <Col xs={10} sm={10} md={8} lg={8}>            
-            <Row>
-                {author && // TODO what if author doesn't exist
-                    <Col xs={10} sm={10} md={8} lg={8}>
-                        <div><h2>{author.name}</h2></div>
-                        <div>{author.summary}</div>
-                    </Col>
-                }
-                <Col>
-                    <Image src={defaultUserImage} className="author-image" roundedCircle />
-                </Col>
-            </Row>
-            <Row className="articles">
-                <h5>Articles</h5>
-            </Row>
+        <div className="authorPage-container">
+        <div></div>
+        <div>            
+            {author && // TODO what if author doesn't exist
+                <div className="authorPage-autorInfo-container">
+                    <div>
+                        <h2>{author.name}</h2>
+                        <p>{author.summary}</p>
+                    </div>
+                    <div className="authorPage-autorInfo-imageContainer">
+                        <img src={defaultUserImage} className="authorPage-autorInfo-image" />
+                    </div>
+                </div>
+            }
+            <section>
+                <h3 className='authorPage-articles-title'>Articles</h3>
 
-            {authoredArticles.map((article) => 
-                (<Link to={"/article/" + article.id} className="textLink">
-                    <ArticleSummary article={article} />
-                </Link>)
-            )}
-        </Col>
-        <Col></Col>
-        </Row>
+                {authoredArticles.map((article) => 
+                    (<Link to={"/article/" + article.id} className="textLink" key={article.id}>
+                        <ArticleSummary article={article} />
+                    </Link>)
+                )}
+            </section>
+        </div>
+        <div></div>
+        </div>
     );
 }
