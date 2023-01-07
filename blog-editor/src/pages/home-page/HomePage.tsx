@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ArticleSummaryList, HighlightArticle } from '../../components';
 import { getArticles, getAuthors } from '../../api';
-import { Container, Row, Col } from 'react-bootstrap'
 import { ArticleModel, AuthorModel } from '../../data/models';
+import "./home-page.css"
 
 export function HomePage() {
   const [articles, setArticles] = useState([] as ArticleModel[]);
@@ -24,18 +24,10 @@ export function HomePage() {
   }, []);
 
   return (
-    <Container>
-      <Row>
-        <Col>
-          <HighlightArticle article={rightHightlightArticle}/>
-        </Col>
-        <Col>
-          <ArticleSummaryList items={articles} />
-        </Col>
-        <Col>
-          <HighlightArticle article={leftHightlightArticle}/>
-        </Col>
-      </Row>
-    </Container>
+    <section className="HomePage-articleContainer">
+        <HighlightArticle article={rightHightlightArticle}/>
+        <ArticleSummaryList items={articles} />
+        <HighlightArticle article={leftHightlightArticle}/>
+    </section>
   );
 }
