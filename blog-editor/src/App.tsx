@@ -12,18 +12,10 @@ function App() {
       <UserContextProvider>
         <PageHeader/>
         <Routes>
-          <Route path="/">
-            <HomePage />
-          </Route>
-          <Route path="/article/:articleId">
-            <ArticlePage />
-          </Route>
-          <Route path="/author/:authorId">
-            <AuthorPage />
-          </Route>
-          <Route>
-            <PageNotFound />
-          </Route>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/article/:articleId" element={<ArticlePage />} />
+          <Route path="/author/:authorId" element={<AuthorPage />} />
+          <Route element={<PageNotFound />} />
         </Routes>
       </UserContextProvider>
     </Container>
