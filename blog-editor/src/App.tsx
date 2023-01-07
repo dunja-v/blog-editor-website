@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Switch} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import './App.css';
 import { Container } from 'react-bootstrap';
 import { UserContextProvider } from './data/context/UserContext';
@@ -11,12 +11,20 @@ function App() {
     <Container>
       <UserContextProvider>
         <PageHeader/>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/article/:articleId" children={<ArticlePage /> } />
-          <Route exact path="/author/:authorId" component={AuthorPage} />
-          <Route component={PageNotFound}/>
-        </Switch>
+        <Routes>
+          <Route path="/">
+            <HomePage />
+          </Route>
+          <Route path="/article/:articleId">
+            <ArticlePage />
+          </Route>
+          <Route path="/author/:authorId">
+            <AuthorPage />
+          </Route>
+          <Route>
+            <PageNotFound />
+          </Route>
+        </Routes>
       </UserContextProvider>
     </Container>
   );

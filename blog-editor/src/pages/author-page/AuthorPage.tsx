@@ -13,19 +13,27 @@ export function AuthorPage() {
     const [authoredArticles, setAuthoredArticles] = useState([] as ArticleModel[]);
 
     const { authorId } = useParams<{authorId: string}>();
-    const authorIdAsNumber = parseInt(authorId);
+    const authorIdAsNumber = authorId ? parseInt(authorId) : null;
 
     useEffect(() => {
+        if(!authorIdAsNumber) {
+            return;
+        }
+
         getAuthor(authorIdAsNumber).then((loadedAuthor) => {
             setAuthor(loadedAuthor);
         });    
-    }, [authorId, authorIdAsNumber]);
+    }, [authorIdAsNumber]);
 
     useEffect(() => {
+        if(!authorIdAsNumber) {
+            return;
+        }
+
         getArticlesByAuthor(authorIdAsNumber).then((loadedArticles) => {
             setAuthoredArticles(loadedArticles);
         });    
-    }, [authorId, authorIdAsNumber]);
+    }, [authorIdAsNumber]);
   
     return (
         <Row className="authorContainer">
