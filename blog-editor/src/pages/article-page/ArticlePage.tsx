@@ -11,9 +11,13 @@ export function ArticlePage() {
   const date = new Date(article.date);
 
   const { articleId } = useParams<{articleId: string}>();
-  const articleIdAsNumber = parseInt(articleId);
+  const articleIdAsNumber = articleId ? parseInt(articleId) : null;
 
   useEffect(() => {
+    if(!articleIdAsNumber) {
+      return;
+    }
+
     // TODO what if article doesn't exist
     getArticle(articleIdAsNumber).then((loadedArticle) => {
       getAuthor(loadedArticle.author).then((author) => {
@@ -21,7 +25,7 @@ export function ArticlePage() {
         setArticle(loadedArticle);
       });
     });    
-  }, [articleId, articleIdAsNumber]);
+  }, [articleIdAsNumber]);
 
     return (
       <Row>
