@@ -1,13 +1,13 @@
 .highlightArticle {
-    padding: 1em;
     font-family: 'Lato', sans-serif;
 }
 
-.highlightArticleTitle {
+.highlightArticle-title {
     font-family: 'Bebas Neue', cursive;
-    padding-top: 1em;
+    font-size: 2em;
+    margin-top: 10px;
 }
 
-.highlightArticleDate {
-    padding-top: 1em;
+.highlightArticle-image {
+    max-width: 100%;
 }
