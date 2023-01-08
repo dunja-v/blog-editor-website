@@ -1,13 +1,18 @@
 .articleSummaryListItem{
-    padding-top: 1em;
-    padding-bottom: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
-.articleSummaryListItemTitle{
+.articleSummaryListItem-title{
     font-family: 'Bebas Neue', cursive;
 }
 
-.articleSummaryListItemBody{
+.articleSummaryListItem-image{
+    max-width: 100%;
+}
+
+.articleSummaryListItem-date{
     font-family: 'Lato', sans-serif;
     font-size: small;
 }
