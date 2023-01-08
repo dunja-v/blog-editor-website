@@ -52,11 +52,13 @@ export function AuthorPage() {
             <section>
                 <h3 className='authorPage-articles-title'>Articles</h3>
 
-                {authoredArticles.map((article) => 
-                    (<Link to={"/article/" + article.id} className="textLink" key={article.id}>
-                        <ArticleSummary article={article} />
-                    </Link>)
-                )}
+                <div className='authorPage-articles-container'>
+                    {authoredArticles.map((article) => 
+                        (<Link to={"/article/" + article.id} className="textLink" key={article.id}>
+                            <ArticleSummary article={article} />
+                        </Link>)
+                    )}
+                </div>
             </section>
         </div>
         <div></div>

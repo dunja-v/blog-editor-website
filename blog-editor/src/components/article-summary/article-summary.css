@@ -1,0 +1,10 @@
+.articleSummary-container {
+    display: grid;
+    grid-template-columns: 67% 30%;
+    gap: 3%;
+    padding: 10px;
+}
+
+.articleSummary-image {
+    max-width: 100%;
+}

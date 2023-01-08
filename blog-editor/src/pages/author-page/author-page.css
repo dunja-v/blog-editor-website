@@ -23,3 +23,13 @@
     padding-top: 2em;
     padding-bottom: 1em;
 }
+
+.authorPage-articles-title {
+    padding-top: 2em;
+    padding-bottom: 1em;
+}
+
+.authorPage-articles-container {
+    display: grid;
+    row-gap: 10px;
+}
