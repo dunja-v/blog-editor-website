@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { getAuthor, getArticlesByAuthor } from '../../api/articleApi';
 import { useParams, Link } from "react-router-dom";
 import defaultUserImage from '../../images/user.png';
@@ -45,7 +45,7 @@ export function AuthorPage() {
                         <p>{author.summary}</p>
                     </div>
                     <div className="authorPage-autorInfo-imageContainer">
-                        <img src={defaultUserImage} className="authorPage-autorInfo-image" />
+                        <img src={defaultUserImage} className="authorPage-autorInfo-image" alt="" />
                     </div>
                 </div>
             }
