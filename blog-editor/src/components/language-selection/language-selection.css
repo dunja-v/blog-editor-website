@@ -1,3 +1,7 @@
-.languageButton {
-    margin-right: 5px
+.languageSelection-dropdown {
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+    padding: 5px 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
 }

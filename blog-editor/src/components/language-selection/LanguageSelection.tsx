@@ -1,4 +1,4 @@
-import { Button } from "react-bootstrap";
+import { ChangeEvent } from "react";
 import { useTranslation } from "react-i18next";
 import './language-selection.css';
 
@@ -9,15 +9,19 @@ const supportedLanguages = {
 
 export function LanguageSelection() {
     const { i18n } = useTranslation();
+    const currentLanguage = i18n.language;
+
+    const handleLanguageChange = (event: ChangeEvent<HTMLSelectElement>) => {
+        i18n.changeLanguage(event.target.value)
+    }
     
-    // TODO turn this into a button that opens a dropdown
     return (
-        <div>
+        <select name="language" className="languageSelection-dropdown" value={currentLanguage} onChange={handleLanguageChange}>
             {Object.entries(supportedLanguages).map(([languageCode, languageName]) => (
-            <Button className="languageButton" key={languageCode} type="submit" onClick={() => i18n.changeLanguage(languageCode)}>
-                {languageName}
-            </Button>
+                <option value={languageCode} key={languageCode}>
+                    {languageName}
+                </option>
             ))}
-        </div>
+        </select>
     );
 }
