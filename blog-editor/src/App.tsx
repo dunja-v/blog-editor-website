@@ -15,7 +15,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/article/:articleId" element={<ArticlePage />} />
           <Route path="/author/:authorId" element={<AuthorPage />} />
-          <Route element={<PageNotFound />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </UserContextProvider>
     </Container>
