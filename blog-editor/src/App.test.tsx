@@ -1,23 +1,31 @@
-import React from 'react';
 import App from './App';
-import {PageHeader} from './components';
-import { PageNotFound, HomePage, ArticlePage, AuthorPage } from './pages';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
-import '@testing-library/jest-dom/extend-expect';
 
-jest.mock('./pages/home-page/HomePage');
-jest.mock('./components/page-header');
-jest.mock('./pages/article-page/ArticlePage');
-jest.mock('./pages/author-page/AuthorPage');
-jest.mock('./pages/PageNotFound');
+jest.mock('./pages/home-page/HomePage', () => ({
+  __esModule: true,
+  HomePage: () => <div data-testid="HomePageMock" />
+}));
+
+jest.mock('./components/page-header', () => ({
+  __esModule: true,
+  PageHeader: () => <div data-testid="PageHeaderMock" />
+}));
+jest.mock('./pages/article-page/ArticlePage', () => ({
+  __esModule: true,
+  ArticlePage: () => <div data-testid="ArticlePageMock" />
+}));
+jest.mock('./pages/author-page/AuthorPage', () => ({
+  __esModule: true,
+  AuthorPage: () => <div data-testid="AuthorPageMock" />
+}));
+jest.mock('./pages/PageNotFound', () => ({
+  __esModule: true,
+  PageNotFound: () => <div data-testid="PageNotFoundMock" />
+}));
 
 describe("Tests for App Router", () => {
   test("Should render page header and HomePage on default route", () => {
-    // Arrange
-    (PageHeader as jest.Mock).mockImplementation(() => <div>PageHeaderMock</div>);
-    (HomePage as jest.Mock).mockImplementation(() => <div>HomePageMock</div>);
-
     // Act
     render(
       <MemoryRouter>
@@ -26,15 +34,11 @@ describe("Tests for App Router", () => {
     );
 
     // Assert
-    expect(screen.getByText("PageHeaderMock")).toBeInTheDocument();
-    expect(screen.getByText("HomePageMock")).toBeInTheDocument();
+    expect(screen.getByTestId("PageHeaderMock")).toBeInTheDocument();
+    expect(screen.getByTestId("HomePageMock")).toBeInTheDocument();
   });
 
   test("Should render page header and ArticlePage for article route", () => {
-    // Arrange
-    (PageHeader as jest.Mock).mockImplementation(() => <div>PageHeaderMock</div>);
-    (ArticlePage as jest.Mock).mockImplementation(() => <div>ArticlePageMock</div>);
-
     // Act
     render(
       <MemoryRouter initialEntries={['/article/1']}>
@@ -43,15 +47,11 @@ describe("Tests for App Router", () => {
     );
 
     // Assert
-    expect(screen.getByText("PageHeaderMock")).toBeInTheDocument();
-    expect(screen.getByText("ArticlePageMock")).toBeInTheDocument();
+    expect(screen.getByTestId("PageHeaderMock")).toBeInTheDocument();
+    expect(screen.getByTestId("ArticlePageMock")).toBeInTheDocument();
   });
 
   test("Should render page header and AuthorPage for author route", () => {
-    // Arrange
-    (PageHeader as jest.Mock).mockImplementation(() => <div>PageHeaderMock</div>);
-    (AuthorPage as jest.Mock).mockImplementation(() => <div>AuthorPageMock</div>);
-
     // Act
     render(
       <MemoryRouter initialEntries={['/author/1']}>
@@ -60,15 +60,11 @@ describe("Tests for App Router", () => {
     );
 
     // Assert
-    expect(screen.getByText("PageHeaderMock")).toBeInTheDocument();
-    expect(screen.getByText("AuthorPageMock")).toBeInTheDocument();
+    expect(screen.getByTestId("PageHeaderMock")).toBeInTheDocument();
+    expect(screen.getByTestId("AuthorPageMock")).toBeInTheDocument();
   });
 
   test("Should render page header and PageNotFound for invalid route", () => {
-    // Arrange
-    (PageHeader as jest.Mock).mockImplementation(() => <div>PageHeaderMock</div>);
-    (PageNotFound as jest.Mock).mockImplementation(() => <div>PageNotFoundMock</div>);
-
     // Act
     render(
       <MemoryRouter initialEntries={['/invalid/route']}>
@@ -77,7 +73,7 @@ describe("Tests for App Router", () => {
     );
 
     // Assert
-    expect(screen.getByText("PageHeaderMock")).toBeInTheDocument();
-    expect(screen.getByText("PageNotFoundMock")).toBeInTheDocument();
+    expect(screen.getByTestId("PageHeaderMock")).toBeInTheDocument();
+    expect(screen.getByTestId("PageNotFoundMock")).toBeInTheDocument();
   });
 });
