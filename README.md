@@ -9,7 +9,8 @@ https://medium.com/analytics-vidhya/react-how-to-use-context-with-functional-com
 
 ## Testing React Router with Jest & react-testing-library
 New version: https://dunja-vesinger.medium.com/testing-react-router-with-react-testing-library-8e24f7bdca18
-(Original: https://javascript.plainenglish.io/testing-react-router-with-jest-bc13d367bad)
+
+(Original article: https://javascript.plainenglish.io/testing-react-router-with-jest-bc13d367bad)
 
 ## Translate your React Applications with i18next
 https://medium.com/analytics-vidhya/react-how-to-use-context-with-functional-components-240a8ec4126a
